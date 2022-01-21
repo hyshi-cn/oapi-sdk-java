@@ -15,8 +15,6 @@
  */
 package ext.feishu.oapi.okio1_17;
 
-import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
-
 import javax.annotation.Nullable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -168,7 +166,6 @@ public final class Okio {
   }
 
   /** Returns a source that reads from {@code path}. */
-  @IgnoreJRERequirement // Should only be invoked on Java 7+.
   public static Source source(Path path, OpenOption... options) throws IOException {
     if (path == null) throw new IllegalArgumentException("path == null");
     return source(Files.newInputStream(path, options));
@@ -187,7 +184,6 @@ public final class Okio {
   }
 
   /** Returns a sink that writes to {@code path}. */
-  @IgnoreJRERequirement // Should only be invoked on Java 7+.
   public static Sink sink(Path path, OpenOption... options) throws IOException {
     if (path == null) throw new IllegalArgumentException("path == null");
     return sink(Files.newOutputStream(path, options));

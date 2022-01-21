@@ -15,8 +15,6 @@
  */
 package ext.feishu.oapi.okio1_17;
 
-import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
-
 import java.io.IOException;
 import java.util.zip.Deflater;
 
@@ -78,8 +76,7 @@ public final class DeflaterSink implements Sink {
     }
   }
 
-  @IgnoreJRERequirement
-  private void deflate(boolean syncFlush) throws IOException {
+    private void deflate(boolean syncFlush) throws IOException {
     Buffer buffer = sink.buffer();
     while (true) {
       Segment s = buffer.writableSegment(1);
