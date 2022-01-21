@@ -27,7 +27,6 @@ import ext.feishu.oapi.okhttp3_14.internal.tls.OkHostnameVerifier;
 import ext.feishu.oapi.okhttp3_14.internal.ws.RealWebSocket;
 import ext.feishu.oapi.okio1_17.Sink;
 import ext.feishu.oapi.okio1_17.Source;
-import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
 
 import javax.annotation.Nullable;
 import javax.net.SocketFactory;
@@ -531,7 +530,6 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
      *
      * <p>The default value is 0 which imposes no timeout.
      */
-    @IgnoreJRERequirement
     public Builder callTimeout(Duration duration) {
       callTimeout = Util.checkDuration("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
       return this;
@@ -558,7 +556,6 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
      * <p>The connect timeout is applied when connecting a TCP socket to the target host.
      * The default value is 10 seconds.
      */
-    @IgnoreJRERequirement
     public Builder connectTimeout(Duration duration) {
       connectTimeout = Util.checkDuration("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
       return this;
@@ -589,7 +586,6 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
      * @see Socket#setSoTimeout(int)
      * @see Source#timeout()
      */
-    @IgnoreJRERequirement
     public Builder readTimeout(Duration duration) {
       readTimeout = Util.checkDuration("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
       return this;
@@ -618,7 +614,6 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
      *
      * @see Sink#timeout()
      */
-    @IgnoreJRERequirement
     public Builder writeTimeout(Duration duration) {
       writeTimeout = Util.checkDuration("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
       return this;
@@ -655,7 +650,6 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
      *
      * <p>The default value of 0 disables client-initiated pings.
      */
-    @IgnoreJRERequirement
     public Builder pingInterval(Duration duration) {
       pingInterval = Util.checkDuration("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
       return this;

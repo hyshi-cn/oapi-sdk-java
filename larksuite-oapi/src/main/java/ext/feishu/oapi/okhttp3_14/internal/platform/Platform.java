@@ -18,7 +18,6 @@ package ext.feishu.oapi.okhttp3_14.internal.platform;
 
 import ext.feishu.oapi.okhttp3_14.OkHttpClient;
 import ext.feishu.oapi.okhttp3_14.Protocol;
-import ext.feishu.oapi.okhttp3_14.internal.Util;
 import ext.feishu.oapi.okhttp3_14.internal.tls.BasicCertificateChainCleaner;
 import ext.feishu.oapi.okhttp3_14.internal.tls.BasicTrustRootIndex;
 import ext.feishu.oapi.okhttp3_14.internal.tls.CertificateChainCleaner;
@@ -35,7 +34,6 @@ import java.lang.reflect.Field;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.security.NoSuchAlgorithmException;
-import java.security.Security;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -187,41 +185,12 @@ public class Platform {
     return buildCertificateChainCleaner(trustManager);
   }
 
-  public static boolean isConscryptPreferred() {
-    // mainly to allow tests to run cleanly
-    if ("conscrypt".equals(Util.getSystemProperty("okhttp.platform", null))) {
-      return true;
-    }
-
-    // check if Provider manually installed
-    String preferredProvider = Security.getProviders()[0].getName();
-    return "Conscrypt".equals(preferredProvider);
-  }
-
   /** Attempt to match the host runtime to a capable Platform implementation. */
   private static Platform findPlatform() {
-    if (isAndroid()) {
-      return findAndroidPlatform();
-    } else {
       return findJvmPlatform();
-    }
-  }
-
-  public static boolean isAndroid() {
-    // This explicit check avoids activating in Android Studio with Android specific classes
-    // available when running plugins inside the IDE.
-    return "Dalvik".equals(System.getProperty("java.vm.name"));
   }
 
   private static Platform findJvmPlatform() {
-    if (isConscryptPreferred()) {
-      Platform conscrypt = ConscryptPlatform.buildIfSupported();
-
-      if (conscrypt != null) {
-        return conscrypt;
-      }
-    }
-
     Platform jdk9 = Jdk9Platform.buildIfSupported();
 
     if (jdk9 != null) {
@@ -236,22 +205,6 @@ public class Platform {
 
     // Probably an Oracle JDK like OpenJDK.
     return new Platform();
-  }
-
-  private static Platform findAndroidPlatform() {
-    Platform android10 = Android10Platform.buildIfSupported();
-
-    if (android10 != null) {
-      return android10;
-    }
-
-    Platform android = AndroidPlatform.buildIfSupported();
-
-    if (android == null) {
-      throw new NullPointerException("No platform found on Android");
-    }
-
-    return android;
   }
 
   /**
