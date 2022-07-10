@@ -1,13 +1,13 @@
 package com.larksuite.oapi.core.utils;
 
 import com.google.gson.annotations.SerializedName;
-import com.larksuite.oapi.core.event.v1.AppTicketEvent;
+import ext.feishu.oapi.core.event.v1.AppTicketEvent;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static com.larksuite.oapi.core.utils.Jsons.DEFAULT_GSON;
-import static com.larksuite.oapi.core.utils.Jsons.LONG_TO_STR_GSON;
+import static ext.feishu.oapi.core.utils.Jsons.DEFAULT_GSON;
+import static ext.feishu.oapi.core.utils.Jsons.LONG_TO_STR_GSON;
 
 public class JsonsTest {
 

@@ -1,15 +1,15 @@
-package com.larksuite.oapi.sample.api;
+package ext.feishu.oapi.sample.api;
 
-import com.larksuite.oapi.core.AppSettings;
-import com.larksuite.oapi.core.AppType;
-import com.larksuite.oapi.core.Config;
-import com.larksuite.oapi.core.Domain;
-import com.larksuite.oapi.core.api.request.requestoptfn.UserAccessToken;
-import com.larksuite.oapi.core.api.response.Response;
-import com.larksuite.oapi.core.utils.Jsons;
-import com.larksuite.oapi.sample.config.Configs;
-import com.larksuite.oapi.service.docx.v1.DocxService;
-import com.larksuite.oapi.service.docx.v1.model.*;
+import ext.feishu.oapi.core.AppSettings;
+import ext.feishu.oapi.core.AppType;
+import ext.feishu.oapi.core.Config;
+import ext.feishu.oapi.core.Domain;
+import ext.feishu.oapi.core.api.request.requestoptfn.UserAccessToken;
+import ext.feishu.oapi.core.api.response.Response;
+import ext.feishu.oapi.core.utils.Jsons;
+import ext.feishu.oapi.sample.config.Configs;
+import ext.feishu.oapi.service.docx.v1.DocxService;
+import ext.feishu.oapi.service.docx.v1.model.*;
 
 public class DocxSample {
     // for Cutome APP（自建应用）

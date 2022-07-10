@@ -4,7 +4,7 @@ import ext.feishu.oapi.core.AppSettings;
 import ext.feishu.oapi.core.Config;
 import ext.feishu.oapi.core.Domain;
 import ext.feishu.oapi.core.Keys;
-import com.larksuite.oapi.core.api.*;
+import ext.feishu.oapi.core.api.*;
 import ext.feishu.oapi.core.api.request.FormData;
 import ext.feishu.oapi.core.api.request.FormDataFile;
 import ext.feishu.oapi.core.api.request.Request;

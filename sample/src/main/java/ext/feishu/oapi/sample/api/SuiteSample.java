@@ -8,7 +8,7 @@ import ext.feishu.oapi.core.api.response.Response;
 import ext.feishu.oapi.core.utils.Jsons;
 import ext.feishu.oapi.sample.config.Configs;
 import ext.feishu.oapi.service.suite.v1.SuiteService;
-import com.larksuite.oapi.service.suite.v1.model.*;
+import ext.feishu.oapi.service.suite.v1.model.*;
 import ext.feishu.oapi.service.suite.v1.model.DocsApiMetaReqBody;
 import ext.feishu.oapi.service.suite.v1.model.DocsApiMetaResult;
 import ext.feishu.oapi.service.suite.v1.model.DocsApiSearchReqBody;

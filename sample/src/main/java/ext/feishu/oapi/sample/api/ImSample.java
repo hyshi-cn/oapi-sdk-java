@@ -1,6 +1,6 @@
 package ext.feishu.oapi.sample.api;
 
-import com.larksuite.oapi.core.*;
+import ext.feishu.oapi.core.*;
 import ext.feishu.oapi.core.api.response.Response;
 import ext.feishu.oapi.core.utils.Jsons;
 import ext.feishu.oapi.service.im.v1.ImService;
